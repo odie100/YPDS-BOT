@@ -2,3 +2,4 @@
 Discord BOT for YOUNG PROFESSIONAL IN DATA SCIENCE
 
 ## REQUIREMENTS
+> discord.py

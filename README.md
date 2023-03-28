@@ -2,4 +2,4 @@
 Discord BOT for YOUNG PROFESSIONAL IN DATA SCIENCE
 
 ## REQUIREMENTS
-> discord.py
+> pip install discord.py

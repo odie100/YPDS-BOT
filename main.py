@@ -14,7 +14,9 @@ client = commands.Bot(command_prefix = '?', intents=discord.Intents.all())
 async def on_ready():
     print('The bot is ready for use!')
     print('-------------------------')
+    # get Channel #ask-bot (read the docs for more informations about Channel object)
     channel = client.get_channel(CH_ASK_BOT)
+    # send message on channel #ask-bot
     await channel.send("BOT connected!")
 
 #------- On disconnect -----------#
@@ -24,7 +26,7 @@ async def on_disconnect():
     channel = client.get_channel(CH_ASK_BOT)
     await channel.send("BOT disconnected")
 
-### On member join join server
+#------ On member join join server --------#
 @client.event
 async def on_member_join(member):
     print("New member: " + member)
@@ -32,29 +34,32 @@ async def on_member_join(member):
     await channel.send("Hello "+ member.mention +"! Welcome to the server, Thanks for join us!")
     await channel.send("We want to know you, (your name, your level in python, your level in data science, your target...)")
 
-### On member leave server
+#------- On member leave server --------#
 @client.event
 async def on_member_remove(member):
     channel = client.get_channel(CH_PRESENT_YOURSELF)
     print("A member leave: " + member)
     await channel.send(member.mention +" leave the server!")
 
-### On a message recived
+#---------- On a message recived ----------#
 @client.event
 async def on_message(message):
     channel = client.get_channel(CH_ASK_BOT)
     channel_message = message.channel
     auth = message.author
+    # if person send message in the channel #ask-bot or mention bot in others channels
     if (channel == channel_message and not auth.bot) or client.user.mentioned_in(message):
         com = message.content
+        # if message start with '!' (call function gererate_reply() form responses.commands)
         if com[0] == '!':
             text = generate_reply(auth, com)
             await message.reply(embed=text)
+        # simple message (Need a Model text generator like GPT or Model ChapBot)
         else:
             text = "Sorry "+ auth.mention +"! For the moment, I can't generate answers for you!"
             await message.reply(text)
 
-### On update member
+#---------- On update member ----------#
 @client.event
 async def on_member_update(before, after):
     if before.top_role != after.top_role:

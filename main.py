@@ -1,17 +1,12 @@
 import discord
 from discord.ext import commands
 from apikeys import *
+from privateapikeys import BOTTOKEN
 import sys
 from responses.commands import generate_reply
 
 # CLIENT
 client = commands.Bot(command_prefix = '?', intents=discord.Intents.all())
-
-#================================= COMMANDS ======================================#
-#@client.command()
-#async def hi(ctx):
-#    print(type(ctx))
-#    await ctx.send('YOUR LEVEL')
 
 #================================== EVENTS ==========================================#
 ### On ready
@@ -54,9 +49,10 @@ async def on_message(message):
         com = message.content
         if com[0] == '!':
             text = generate_reply(auth, com)
+            await message.reply(embed=text)
         else:
             text = "Sorry "+ auth.mention +"! For the moment, I can't generate answers for you!"
-        await message.reply(embed=text)
+            await message.reply(text)
 
 ### On update member
 @client.event

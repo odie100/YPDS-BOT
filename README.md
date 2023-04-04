@@ -61,7 +61,7 @@ https://discordpy.readthedocs.io/en/stable/api.html#roles</br></br>
 <b>USER MODEL</b></br>
 https://discordpy.readthedocs.io/en/stable/api.html#id1 </br>
 <b>MESSAGE MODEL</b></br>
-https://discordpy.readthedocs.io/en/stable/api.html#message
+https://discordpy.readthedocs.io/en/stable/api.html#message </br>
 <b>REACTION MODEL</b></br>
 https://discordpy.readthedocs.io/en/stable/api.html#reaction</br>
 <b>GUILD MODEL</b></br>

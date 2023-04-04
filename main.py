@@ -9,7 +9,7 @@ from responses.commands import generate_reply
 client = commands.Bot(command_prefix = '?', intents=discord.Intents.all())
 
 #================================== EVENTS ==========================================#
-### On ready
+#--------On ready----------#
 @client.event
 async def on_ready():
     print('The bot is ready for use!')
@@ -17,7 +17,7 @@ async def on_ready():
     channel = client.get_channel(CH_ASK_BOT)
     await channel.send("BOT connected!")
 
-### On disconnect
+#------- On disconnect -----------#
 @client.event
 async def on_disconnect():
     print('Disconnected')

@@ -1,7 +1,7 @@
 # YPDS-BOT
 Discord BOT for YOUNG PROFESSIONAL IN DATA SCIENCE
 
-## REQUIREMENTS
+## EXPLANATION
 ### VIRTUAL ENVIRONMENT
 > python -m venv discord_env
 
@@ -25,5 +25,5 @@ This file contains the private TOKEN of your BOT, it cannot be shared in public
 
 ### DOCUMENTATIONS
 https://discordpy.readthedocs.io/en/stable/api.html </br>
-READ THE COMMENTS IF YOU WANT TO KNOW HOW IT WORK
+READ COMMENTS IF YOU WANT TO KNOW HOW IT WORK
 
